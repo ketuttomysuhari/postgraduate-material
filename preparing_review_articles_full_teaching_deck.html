@@ -1,0 +1,1642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Structured teaching presentation on review articles and Publish or Perish based on an uploaded book and seven PoP/Scopus exports.">
+<title>Preparing Review Articles Using Publish or Perish</title>
+<style>
+:root{
+ --bg:#f6f2eb;--paper:#fffdf9;--ink:#182235;--muted:#5d6676;--brand:#7a1f2b;
+ --brand2:#53131d;--gold:#d39d3f;--blue:#315d8a;--green:#166847;--purple:#786ca8;
+ --orange:#b55325;--red:#a13b3b;--line:#e5d8c8;--shadow:0 18px 55px rgba(0,0,0,.2);
+ --safe:5.1%;
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+.deck{position:relative;width:100vw;height:100vh;display:grid;place-items:center;overflow:hidden}
+.slide{position:absolute;display:none;width:min(100vw,177.7778vh);height:min(56.25vw,100vh);aspect-ratio:16/9;padding:4.8% var(--safe) 4% var(--safe);overflow:hidden;background:radial-gradient(circle at 94% 94%,rgba(211,157,63,.15),transparent 28%),linear-gradient(135deg,#fff 0%,var(--bg) 100%);box-shadow:var(--shadow)}
+.slide.active{display:block;animation:slideFade .28s ease}.slide:before{content:"";position:absolute;inset:0 auto 0 0;width:.48%;background:linear-gradient(var(--brand),var(--gold))}
+.slide>*{position:relative;z-index:1}.brand{position:absolute;top:2%;left:var(--safe);right:var(--safe);height:4%;display:flex;align-items:center;gap:.75rem;color:var(--muted);font-size:clamp(9px,.78vw,14px)}
+.logo-mark,.title-logo{display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,var(--brand),var(--brand2));color:#fff;font-weight:900;letter-spacing:.04em;box-shadow:0 7px 18px rgba(83,19,29,.22)}
+.logo-mark{width:clamp(29px,2.65vw,44px);height:clamp(29px,2.65vw,44px);font-size:clamp(8px,.72vw,13px)}.course{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.slide-number{color:var(--brand);font-weight:900}
+.label{margin-top:2.5%;color:var(--brand);font-size:clamp(9px,.82vw,14px);font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:.35rem 0 .68rem;font-size:clamp(28px,3vw,49px);line-height:1.02;letter-spacing:-.025em}h2{margin:0;font-size:clamp(17px,1.55vw,28px)}
+.content{width:100%;height:75%;overflow:hidden;font-size:clamp(11px,1vw,17px);line-height:1.32;display:flex;flex-direction:column;justify-content:center}
+.footer-note{position:absolute;left:var(--safe);right:var(--safe);bottom:1.35%;color:#777;font-size:clamp(7px,.6vw,11px)}
+.animate{opacity:0;transform:translateY(14px);filter:blur(1px)}.slide.active .animate{animation:rise .52s ease forwards;animation-delay:calc(var(--order,0)*55ms)}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}@keyframes slideFade{from{opacity:.35;transform:scale(.997)}to{opacity:1;transform:scale(1)}}
+.grid{display:grid;gap:clamp(.48rem,.75vw,.85rem);align-items:stretch}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;padding:clamp(.62rem,.85vw,.92rem);border:1px solid var(--line);border-radius:.95rem;background:rgba(255,255,255,.96);box-shadow:0 8px 21px rgba(34,27,20,.06);overflow:hidden}
+.card:before{content:"";position:absolute;top:0;left:0;width:100%;height:.25rem;background:var(--accent,var(--brand))}.card h3{margin:.15rem 0 .32rem;color:var(--accent,var(--brand));font-size:clamp(12px,1.08vw,18px);line-height:1.12}.card p{margin:0;color:#303b4f;font-size:clamp(9px,.78vw,13px);line-height:1.32}.card-index{position:absolute;right:.72rem;top:.55rem;font-weight:900;color:color-mix(in srgb,var(--accent,var(--brand)) 35%,transparent);font-size:clamp(12px,1.25vw,20px)}
+.accent-gold{--accent:#b77b12}.accent-blue{--accent:var(--blue)}.accent-green{--accent:var(--green)}.accent-purple{--accent:var(--purple)}.accent-orange{--accent:var(--orange)}.accent-red{--accent:var(--red)}
+.key-paragraph{margin-top:.62rem;padding:.62rem .82rem;border-left:.42rem solid var(--gold);border-radius:.72rem;background:#fff;color:#303b4f;box-shadow:0 8px 20px rgba(34,27,20,.055);font-size:clamp(9px,.8vw,13.5px);line-height:1.35}
+.intro-panel{margin-bottom:.6rem;padding:.7rem .9rem;border:1px solid rgba(122,31,43,.16);border-radius:.9rem;background:linear-gradient(90deg,rgba(122,31,43,.07),#fff 25%);font-size:clamp(10px,.88vw,15px)}
+.columns{display:grid;grid-template-columns:1.08fr .92fr;gap:1.2rem;align-items:center}.columns.equal{grid-template-columns:1fr 1fr}.columns.reverse{grid-template-columns:.92fr 1.08fr}.lead{font-size:clamp(18px,1.8vw,30px);font-weight:800;line-height:1.18}.quote{padding:1rem;border-left:.5rem solid var(--gold);border-radius:.9rem;background:#fff;font-size:clamp(18px,1.8vw,30px);line-height:1.18;font-weight:800}
+.visual-panel,.chart-box{height:100%;min-height:260px;border:1px solid var(--line);border-radius:1rem;background:#fff;padding:.55rem;box-shadow:0 8px 20px rgba(34,27,20,.055)}.full-svg{width:100%;height:100%}.svg-title{font-size:27px;font-weight:900;fill:#182235}.svg-small{font-size:15px;fill:#5d6676}.svg-label{font-size:15px;font-weight:800;fill:#7a1f2b}
+.title-slide{padding:7% 7.8% 5.2%}.title-slide:before{display:none}.hero-shape{position:absolute;top:0;right:-4%;width:45%;height:100%;clip-path:polygon(28% 0,100% 0,100% 100%,0 100%);background:linear-gradient(160deg,var(--brand),#b85537 68%,var(--gold))}
+.title-logo{position:absolute;top:6%;left:5.5%;width:88px;height:88px}.title-copy{max-width:55%;margin-top:4%}.title-slide h1{font-size:clamp(35px,4.15vw,68px);max-width:100%}.title-slide h2{margin-top:.7rem;color:var(--muted);font-weight:500}.eyebrow{color:var(--brand);font-weight:900;letter-spacing:.12em}.presenter{margin-top:1.1rem;line-height:1.42}.book-visual{position:absolute;top:13%;right:6.8%;width:27%;height:72%;padding:2rem;border-radius:1.1rem;background:linear-gradient(155deg,#fff,#f7e7c7);box-shadow:0 22px 48px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center}.book-kicker{color:var(--brand);font-size:12px;font-weight:900;letter-spacing:.1em}.book-visual strong{margin-top:.7rem;font-size:clamp(20px,2.1vw,34px);line-height:1.08}.mini-map{display:grid;gap:.45rem;margin-top:1.1rem}.mini-map span{padding:.45rem .65rem;border-radius:999px;background:#fff;color:#5d6676;font-size:12px;font-weight:700}
+.section-slide{background:radial-gradient(circle at 90% 100%,rgba(211,157,63,.55),transparent 34%),linear-gradient(135deg,var(--brand2),#1e293d 68%,var(--gold));color:#fff}.section-slide:before{display:none}.section-slide .brand,.section-slide .label,.section-slide h1,.section-slide .slide-number{color:#fff}.section-center{height:70%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.section-center p{max-width:78%;font-size:clamp(24px,2.6vw,44px);line-height:1.16;font-weight:700}.section-orbit{width:110px;height:110px;border-radius:50%;border:18px solid rgba(255,255,255,.15);border-top-color:var(--gold);animation:spin 8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.learning-cycle{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.7rem}.learning-cycle div{display:flex;gap:.55rem;align-items:center;padding:.6rem;border-radius:.7rem;background:#fff}.learning-cycle b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff}
+.flow{display:flex;align-items:stretch;gap:.25rem}.node{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:.62rem;border:1px solid var(--line);border-radius:.78rem;background:#fff;min-height:78px}.node b{color:var(--brand);font-size:clamp(10px,.92vw,15px)}.node small{margin-top:.25rem;color:var(--muted);font-size:clamp(7px,.62vw,10.5px)}.arrow{display:grid;place-items:center;color:var(--gold);font-size:24px;font-weight:900}
+.workflow-road{margin-top:1.3rem;display:flex;align-items:center;gap:.8rem}.road-line{height:8px;flex:1;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--gold))}.road-label{font-size:11px;font-weight:900;color:var(--brand);letter-spacing:.08em}.road-label.right{color:#9a6a18}
+.stack{display:grid;gap:.55rem}.stack div{padding:.7rem;border-left:5px solid var(--gold);background:#fff;border-radius:.7rem}.stack b,.stack span{display:block}.stack span{color:var(--muted);margin-top:.15rem}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:stretch}.compare-side{padding:1.1rem;border-radius:1rem;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.06)}.compare-side.primary{border-top:7px solid var(--blue)}.compare-side.review{border-top:7px solid var(--brand)}.compare-icon{display:grid;place-items:center;width:55px;height:55px;border-radius:50%;background:#f3e8d9;font-size:26px;font-weight:900;color:var(--brand)}.versus{display:grid;place-items:center;font-weight:900;color:var(--gold)}
+.ladder{display:flex;align-items:flex-end;gap:.6rem;height:300px}.ladder div{flex:1;height:calc(var(--level)*17%);min-height:88px;padding:.7rem;border-radius:.8rem .8rem 0 0;background:linear-gradient(180deg,color-mix(in srgb,var(--brand) calc(var(--level)*13%),#fff),#fff);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end}.ladder b{color:var(--brand)}.ladder span{font-size:11px;color:var(--muted)}
+.example-strip,.warning-strip,.qa-strip{margin-top:.65rem;padding:.65rem .85rem;border-radius:.75rem;background:#2d3648;color:#fff;font-size:clamp(9px,.78vw,13px)}
+.review-wheel{position:relative;width:680px;height:390px;margin:auto}.wheel-center{position:absolute;left:260px;top:135px;width:160px;height:120px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;text-align:center;padding:1rem}.wheel-center span{font-size:11px}.wheel-item{position:absolute;width:150px;padding:.55rem;text-align:center;border-radius:.8rem;background:#fff;border:1px solid var(--line);box-shadow:0 6px 15px rgba(0,0,0,.05)}.wheel-item b,.wheel-item span{display:block}.wheel-item span{font-size:10px;color:var(--muted)}.w1{left:0;top:20px}.w2{left:265px;top:0}.w3{right:0;top:20px}.w4{right:0;top:160px}.w5{right:40px;bottom:0}.w6{left:265px;bottom:0}.w7{left:40px;bottom:0}.w8{left:0;top:160px}
+.decision-tree .root{margin:auto;width:42%;padding:.75rem;border-radius:.8rem;background:var(--brand);color:#fff;text-align:center;font-weight:900}.branches{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1rem}.branches div{padding:.8rem;border:1px solid var(--line);border-radius:.8rem;background:#fff}.branches span,.branches b,.branches small{display:block}.branches span{color:var(--gold);font-weight:800}.branches b{margin:.2rem 0;color:var(--brand)}.branches small{color:var(--muted)}
+.funnel{display:flex;flex-direction:column;align-items:center;gap:.28rem}.funnel-band{padding:.55rem;text-align:center;background:linear-gradient(90deg,var(--brand),var(--gold));color:#fff;clip-path:polygon(5% 0,95% 0,88% 100%,12% 100%)}.funnel-band:nth-child(1){width:94%}.funnel-band:nth-child(2){width:82%}.funnel-band:nth-child(3){width:70%}.funnel-band:nth-child(4){width:58%}.funnel-band:nth-child(5){width:46%}.funnel-band b,.funnel-band span{display:block}.funnel-band span{font-size:11px}
+.novelty-map{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}.novelty-map div{min-height:112px;padding:.8rem;border-radius:.85rem;background:#fff;border:1px solid var(--line);box-shadow:0 7px 18px rgba(0,0,0,.05)}.novelty-map div:last-child{grid-column:2/4}.novelty-map b,.novelty-map span{display:block}.novelty-map b{color:var(--brand);font-size:16px}.novelty-map span{margin-top:.25rem;color:var(--muted);font-size:12px}
+.worked-example{margin-top:.7rem;padding:.75rem .9rem;border:1px solid var(--line);border-radius:.85rem;background:#fff}.worked-example p{margin:.25rem 0 0;font-size:clamp(9px,.78vw,13px)}.example-title{color:var(--brand);font-weight:900}
+.card.large{padding:1.1rem}.mini-check{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:.7rem}.mini-check span{padding:.4rem;border-radius:.5rem;background:#f6f2eb;font-size:11px}
+.protocol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.55rem}.protocol-grid div{display:flex;align-items:center;gap:.45rem;padding:.58rem;border-radius:.65rem;background:#fff;border:1px solid var(--line)}.protocol-grid b{color:var(--gold)}.protocol-grid span{font-size:11px;font-weight:700}
+.eligibility{display:grid;grid-template-columns:1.15fr repeat(4,1fr);gap:.65rem}.question-box,.criterion-box{min-height:230px;padding:1rem;border-radius:.9rem;display:flex;flex-direction:column;justify-content:center}.question-box{background:var(--brand);color:#fff;font-size:20px}.criterion-box{background:#fff;border:1px solid var(--line)}.criterion-box b{color:var(--brand)}.criterion-box span{margin-top:.45rem;color:var(--muted);font-size:12px}
+.analysis-layers{display:grid;gap:.48rem}.analysis-layers div{display:grid;grid-template-columns:45px 180px 1fr;align-items:center;padding:.6rem .8rem;border-radius:.7rem;background:#fff;border-left:6px solid var(--gold)}.analysis-layers span{font-weight:900;color:var(--gold)}.analysis-layers b{color:var(--brand)}.analysis-layers p{margin:0;color:var(--muted);font-size:12px}
+.search-builder{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.55rem}.search-block{padding:1rem;border-radius:.9rem;background:#172033;color:#fff;min-height:120px}.search-block label{display:block;color:var(--gold);font-weight:900;margin-bottom:.5rem}.logic{font-weight:900;color:var(--brand)}.compact-grid{margin-top:.7rem}.compact-grid .card{min-height:100px}
+.balance{display:grid;grid-template-columns:1fr 120px 1fr;align-items:center}.balance-side{padding:1rem;border-radius:1rem;background:#fff}.balance-side h2{text-align:center}.scale-circle{display:grid;place-items:center;width:65px;height:65px;margin:auto;border-radius:50%;background:var(--brand);color:#fff;font-size:28px;font-weight:900}.precision .scale-circle{background:var(--blue)}.balance-beam{position:relative;height:12px;background:var(--gold);transform:rotate(-3deg)}.balance-beam span{position:absolute;left:50%;top:-28px;width:12px;height:68px;background:var(--brand)}
+.is-not{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.is-panel,.not-panel{padding:1rem;border-radius:1rem;background:#fff}.is-panel{border-top:7px solid var(--green)}.not-panel{border-top:7px solid var(--red)}.is-panel div,.not-panel div{padding:.55rem 0;border-bottom:1px solid #eee}.is-panel b,.is-panel span,.not-panel b,.not-panel span{display:block}.is-panel span,.not-panel span{color:var(--muted);font-size:12px}
+.source-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:.65rem}.source-cards div{padding:.8rem;border-radius:.85rem;background:#fff;border:1px solid var(--line)}.source-cards b,.source-cards span{display:block}.source-cards b{color:var(--brand)}.source-cards span{color:var(--gold);font-weight:800}.source-cards p{font-size:11px;color:var(--muted)}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}.stages div{padding:.8rem;border-radius:.85rem;background:#fff;border-top:6px solid var(--brand)}.stages b,.stages span{display:block}.stages span{color:var(--gold);font-weight:800}.stages p{font-size:11px;color:var(--muted)}
+.teaching-table{width:100%;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:.8rem;overflow:hidden;font-size:clamp(8px,.72vw,12px)}.teaching-table th{padding:.48rem;background:var(--brand);color:#fff;text-align:left}.teaching-table td{padding:.42rem;border-bottom:1px solid #eadfce;vertical-align:top}.teaching-table tr:nth-child(even) td{background:#fffbf5}
+.metric-explain{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}.metric-explain div{padding:1rem;border-radius:.9rem;background:#fff;border-top:6px solid var(--gold)}.metric-explain b,.metric-explain span,.metric-explain small{display:block}.metric-explain b{color:var(--brand);font-size:17px}.metric-explain span{margin:.35rem 0}.metric-explain small{color:var(--muted)}
+.equation-panel{margin-top:1rem;text-align:center;font-size:clamp(19px,2vw,32px);font-weight:900}.equation-panel span{padding:.35rem .55rem;border-radius:.5rem;background:#fff;color:var(--brand)}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}.metrics-grid div{padding:.85rem;border-left:6px solid var(--gold);border-radius:.75rem;background:#fff}.metrics-grid b,.metrics-grid span{display:block}.metrics-grid b{color:var(--brand);font-size:clamp(20px,2vw,32px)}.metrics-grid span{color:var(--muted);font-size:11px}
+.chart-columns{height:100%;grid-template-columns:1.5fr .7fr}.chart{width:100%;height:100%}.interpretation{padding:.8rem}.interpretation p{font-size:clamp(10px,.85vw,14px)}.insight{margin-top:.7rem;padding:.65rem;border-radius:.7rem;background:#fff;border-left:5px solid var(--gold)}.insight b,.insight span{display:block}.insight span{font-size:11px;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;position:relative}.timeline:before{content:"";position:absolute;left:5%;right:5%;top:32px;height:6px;background:linear-gradient(90deg,var(--brand),var(--gold))}.timeline div{position:relative;margin-top:45px;padding:.8rem;border-radius:.85rem;background:#fff}.timeline div:before{content:"";position:absolute;top:-28px;left:50%;width:18px;height:18px;border-radius:50%;background:var(--brand);border:4px solid #fff}.timeline b,.timeline span{display:block}.timeline span{color:var(--gold);font-weight:800}.timeline p{font-size:11px;color:var(--muted)}
+.corpus-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.7rem}.corpus-flow>div:not(.corpus-arrow){padding:1rem;border-radius:1rem;background:#fff;border-top:7px solid var(--brand);min-height:240px}.corpus-flow span,.corpus-flow b{display:block}.corpus-flow span{color:var(--gold);font-weight:800}.corpus-flow b{font-size:22px;color:var(--brand);margin:.3rem 0}.corpus-arrow{font-size:35px;color:var(--gold)}
+.folder-visual{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}.folder{padding:.8rem;border-radius:.3rem .8rem .8rem .8rem;background:#fff4d9;border:1px solid #e5c981;min-height:120px}.folder b,.folder span{display:block}.folder b{color:#9a6a18}.folder span{font-size:11px;color:var(--muted)}
+.three-risks{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.8rem}.three-risks div{padding:.75rem;border-radius:.75rem;background:#fff}.three-risks b,.three-risks span{display:block}.three-risks b{color:var(--brand)}.three-risks span{font-size:11px;color:var(--muted)}
+.quality-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}.quality-matrix div{padding:.8rem;border-radius:.8rem;background:#fff;border:1px solid var(--line)}.quality-matrix b,.quality-matrix span{display:block}.quality-matrix b{color:var(--brand)}.quality-matrix span{font-size:11px;color:var(--muted)}
+.decision-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.decision-cards div{padding:1.2rem;border-radius:1rem;color:#fff;min-height:170px}.decision-cards b,.decision-cards span{display:block}.decision-cards b{font-size:24px}.decision-cards span{margin-top:.6rem}.include{background:var(--green)}.exclude{background:var(--red)}.unclear{background:var(--gold)}
+.network-visual{height:300px}.theme-test{margin-top:.8rem;padding:.8rem;border-radius:.8rem;background:#fff}.theme-test b,.theme-test span{display:block}.theme-test span{margin-top:.3rem;color:var(--muted)}
+.triad{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.triad div{padding:1rem;border-radius:1rem;color:#fff;min-height:190px}.triad b{font-size:23px}.triad p{font-size:12px}.convergence{background:var(--green)}.contradiction{background:var(--red)}.mechanism{background:var(--blue)}
+.framework{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:.45rem}.framework-layer{padding:1rem;border-radius:.9rem;color:#fff;min-height:170px;display:flex;flex-direction:column;justify-content:center;text-align:center}.framework-layer b{font-size:20px}.framework-layer span{font-size:11px}.inputs{background:var(--brand)}.processes{background:var(--blue)}.outputs{background:var(--green)}.outcomes{background:var(--gold)}.framework-arrow{color:var(--gold);font-size:30px}.context-band{grid-column:1/-1;padding:.7rem;border-radius:.7rem;background:#2d3648;color:#fff;text-align:center}
+.manuscript-stack{display:grid;gap:.45rem}.manuscript-stack div{display:grid;grid-template-columns:190px 1fr;padding:.65rem .8rem;border-radius:.7rem;background:#fff;border-left:6px solid var(--gold)}.manuscript-stack b{color:var(--brand)}.manuscript-stack span{color:var(--muted);font-size:12px}
+.paragraph-builder{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}.paragraph-builder div{padding:.8rem;border-radius:.8rem;background:#fff;border-top:6px solid var(--brand)}.paragraph-builder b,.paragraph-builder span{display:block}.paragraph-builder b{color:var(--brand)}.paragraph-builder span{font-size:11px;color:var(--muted)}
+.journal-radar{position:relative;width:520px;height:380px;margin:auto;border:2px dashed #d4c5b5;border-radius:50%}.radar-center{position:absolute;left:190px;top:135px;width:140px;height:110px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:900}.radar-item{position:absolute;padding:.5rem .7rem;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800}.r1{left:215px;top:5px}.r2{right:20px;top:70px}.r3{right:-10px;top:180px}.r4{right:25px;bottom:40px}.r5{left:205px;bottom:0}.r6{left:20px;bottom:45px}.r7{left:-10px;top:180px}.r8{left:25px;top:65px}
+.project-timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:.45rem}.project-timeline div{min-height:260px;padding:.65rem;border-radius:.8rem;background:#fff;border-top:7px solid var(--gold)}.project-timeline b,.project-timeline span,.project-timeline small{display:block}.project-timeline b{color:var(--brand)}.project-timeline span{margin:.5rem 0;font-weight:800}.project-timeline small{color:var(--muted)}
+.deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}.deliverables div{padding:.9rem;border-radius:.9rem;background:#fff;border:1px solid var(--line)}.deliverables span{font-size:22px;font-weight:900;color:var(--gold)}.deliverables b{display:block;color:var(--brand);font-size:17px}.deliverables p{font-size:11px;color:var(--muted)}
+.closing{text-align:center;max-width:90%;margin:auto}.closing-icon{display:grid;place-items:center;width:80px;height:80px;margin:auto;border-radius:50%;background:linear-gradient(145deg,var(--brand),var(--gold));color:#fff;font-size:38px}.closing h2{margin:.8rem auto;max-width:90%;font-size:clamp(20px,2.2vw,36px);line-height:1.18}.closing-chain{display:flex;justify-content:center;align-items:center;gap:.5rem;flex-wrap:wrap}.closing-chain span{padding:.45rem .65rem;border-radius:999px;background:#fff;font-weight:800;color:var(--brand)}.closing-chain i{color:var(--gold);font-style:normal}.closing p{margin-top:1rem;color:var(--muted)}
+.controls{position:fixed;right:.8rem;bottom:.8rem;z-index:100;display:flex;gap:.35rem}.controls button{width:2.4rem;height:2.4rem;border:0;border-radius:.7rem;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.27);font-weight:900;cursor:pointer}.progress{position:fixed;left:0;bottom:0;width:100%;height:5px;background:#333;z-index:110}.progress i{display:block;height:100%;width:0;background:var(--gold);transition:.2s}.help{position:fixed;left:.8rem;bottom:.8rem;color:#ddd;font-size:.72rem;z-index:90}
+@media(max-height:700px){.slide{padding-top:4.2%}.content{height:74%}h1{font-size:clamp(25px,2.7vw,43px)}.card{padding:.5rem}.card p{font-size:9px}.key-paragraph{padding:.45rem .6rem}.visual-panel,.chart-box{min-height:220px}}
+@media print{html,body{overflow:visible;background:#fff}.deck{display:block;width:auto;height:auto}.slide{position:relative;display:block!important;width:100vw;height:56.25vw;page-break-after:always;box-shadow:none}.controls,.progress,.help{display:none}.animate{opacity:1!important;transform:none!important;filter:none!important}}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<section class="slide title-slide active" data-title="Title">
+  <div class="hero-shape"></div>
+  <div class="title-logo">MSU</div>
+  <div class="title-copy">
+    <div class="eyebrow animate">POSTGRADUATE PUBLICATION TRAINING</div>
+    <h1 class="animate">Preparing Review Articles for Scopus-Indexed Journals Using Publish or Perish</h1>
+    <h2 class="animate">From research problem and transparent retrieval to evidence synthesis, journal selection, and submission</h2>
+    <div class="presenter animate"><strong>Dr. Ir. Ketut Tomy Suhari</strong><br>Research and Development Unit for Smart City Solution (RDSC)<br>Mahasarakham University</div>
+  </div>
+  <div class="book-visual animate float">
+    <div class="book-kicker">COURSE ROADMAP</div>
+    <strong>Concept → Protocol → Search → Evidence → Synthesis → Publication</strong>
+    <div class="mini-map">
+      <span>Review logic</span><span>PoP workflow</span><span>Database cleaning</span>
+      <span>Bibliometric analysis</span><span>Framework synthesis</span><span>Submission</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-title="Learning Outcomes and Student Deliverables">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">02</div>
+  </header>
+  <div class="label">Teaching Design</div>
+  <h1>Learning Outcomes and Student Deliverables</h1>
+  <div class="content">
+<div class="intro-panel animate">
+  This course moves students from <strong>reading papers individually</strong> to building a
+  <strong>transparent, auditable, and publishable synthesis</strong>. Every concept is connected
+  to a concrete manuscript component so that learning results in visible academic work.
+</div>
+<div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Understand review logic</h3><p>Distinguish description, summary, comparison, analysis, synthesis, and contribution. <b>Output:</b> problem statement and gap paragraph.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Design an auditable method</h3><p>Prepare questions, eligibility criteria, sources, screening rules, extraction fields, and planned synthesis. <b>Output:</b> protocol v1.0.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Implement Publish or Perish</h3><p>Translate concepts into queries, select data sources, execute searches, preserve raw exports, and document decisions. <b>Output:</b> query log.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Analyze the literature</h3><p>Interpret ten-year growth, source distribution, document types, citation patterns, influential publications, and metadata quality. <b>Output:</b> figures and analytical paragraphs.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Synthesize evidence</h3><p>Transform coded findings into themes, mechanisms, contradictions, gaps, and a defensible conceptual framework. <b>Output:</b> synthesis matrix.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Prepare for submission</h3><p>Select a suitable journal and prepare the manuscript, declarations, supplements, cover letter, and response matrix. <b>Output:</b> submission package.</p>
+        </article></div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Students should leave each session with a completed review component—not only theoretical notes.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="How to Learn from This Deck">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">03</div>
+  </header>
+  <div class="label">Course Orientation</div>
+  <h1>How to Learn from This Deck</h1>
+  <div class="content">
+<div class="columns equal">
+  <div>
+    <div class="quote animate">A review article is learned by repeatedly connecting a question, a decision, an evidence record, and an interpretive claim.</div>
+    <div class="learning-cycle animate">
+      <div><b>1</b><span>Understand the concept</span></div>
+      <div><b>2</b><span>Observe a worked example</span></div>
+      <div><b>3</b><span>Apply it to your own topic</span></div>
+      <div><b>4</b><span>Produce an auditable output</span></div>
+    </div>
+  </div>
+  <div class="visual-panel animate">
+    <svg viewBox="0 0 500 330" class="full-svg">
+      <defs><linearGradient id="g1" x1="0" x2="1"><stop stop-color="#7a1f2b"/><stop offset="1" stop-color="#d39d3f"/></linearGradient></defs>
+      <circle cx="250" cy="165" r="105" fill="none" stroke="#eadfce" stroke-width="30"/>
+      <path d="M250 60 A105 105 0 0 1 348 127" fill="none" stroke="url(#g1)" stroke-width="30" stroke-linecap="round"/>
+      <path d="M348 127 A105 105 0 0 1 322 244" fill="none" stroke="#315d8a" stroke-width="30" stroke-linecap="round"/>
+      <path d="M322 244 A105 105 0 0 1 170 244" fill="none" stroke="#166847" stroke-width="30" stroke-linecap="round"/>
+      <path d="M170 244 A105 105 0 0 1 152 128" fill="none" stroke="#786ca8" stroke-width="30" stroke-linecap="round"/>
+      <text x="250" y="155" text-anchor="middle" class="svg-title">LEARN</text>
+      <text x="250" y="182" text-anchor="middle" class="svg-small">through production</text>
+      <text x="248" y="35" text-anchor="middle" class="svg-label">Concept</text>
+      <text x="410" y="170" text-anchor="middle" class="svg-label">Example</text>
+      <text x="250" y="318" text-anchor="middle" class="svg-label">Application</text>
+      <text x="82" y="170" text-anchor="middle" class="svg-label">Deliverable</text>
+    </svg>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Use the running example throughout the deck, but replace it with your own review topic during exercises.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="The End-to-End Review Workflow">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">04</div>
+  </header>
+  <div class="label">Course Map</div>
+  <h1>The End-to-End Review Workflow</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Problem</b><small>Why does the field need a review?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Protocol</b><small>What rules control the project?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Search</b><small>How will evidence be identified?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Database</b><small>How will records be preserved and cleaned?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Screening</b><small>Which studies are eligible?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Extraction</b><small>What evidence will be captured?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Synthesis</b><small>What new understanding emerges?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Submission</b><small>Where and how will the review be published?</small></div></div>
+<div class="workflow-road animate">
+  <div class="road-label">CONTROLLED DECISIONS</div>
+  <div class="road-line"></div>
+  <div class="road-label right">AUDITABLE CONTRIBUTION</div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> A strong review is not written after randomly downloading papers. It is built through a documented sequence of methodological decisions.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Understanding the Review Article">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">05</div>
+  </header>
+  <div class="label">Part I</div>
+  <h1>Understanding the Review Article</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Move beyond paper-by-paper summary toward an evidence-based scholarly argument.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="What Is a Review Article?">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">06</div>
+  </header>
+  <div class="label">Foundational Concept</div>
+  <h1>What Is a Review Article?</h1>
+  <div class="content">
+<div class="columns">
+  <div>
+    <p class="lead animate">A review article is a secondary research study that constructs knowledge from an explicitly defined body of existing evidence.</p>
+    <div class="stack animate">
+      <div><b>Evidence base</b><span>Studies are identified using transparent boundaries.</span></div>
+      <div><b>Analytical logic</b><span>Evidence is compared, interpreted, and evaluated.</span></div>
+      <div><b>Contribution</b><span>The review produces a framework, taxonomy, critique, explanation, or agenda.</span></div>
+    </div>
+  </div>
+  <div class="visual-panel animate">
+    <svg viewBox="0 0 520 340" class="full-svg">
+      <g fill="#fff" stroke="#d8c7b6" stroke-width="2">
+        <rect x="35" y="55" width="120" height="70" rx="12"/><rect x="35" y="140" width="120" height="70" rx="12"/><rect x="35" y="225" width="120" height="70" rx="12"/>
+      </g>
+      <text x="95" y="92" text-anchor="middle" class="svg-small">Study A</text><text x="95" y="177" text-anchor="middle" class="svg-small">Study B</text><text x="95" y="262" text-anchor="middle" class="svg-small">Study C</text>
+      <path d="M160 90 C220 90 220 120 270 145 M160 175 C220 175 220 175 270 175 M160 260 C220 260 220 230 270 205" fill="none" stroke="#d39d3f" stroke-width="5"/>
+      <circle cx="320" cy="175" r="70" fill="#7a1f2b"/><text x="320" y="166" text-anchor="middle" fill="#fff" font-size="24" font-weight="800">SYNTHESIS</text><text x="320" y="193" text-anchor="middle" fill="#f7e7c7" font-size="14">combined interpretation</text>
+      <path d="M392 175 H475" stroke="#315d8a" stroke-width="6"/><polygon points="475,175 455,163 455,187" fill="#315d8a"/>
+      <text x="460" y="130" text-anchor="middle" class="svg-label">New</text><text x="460" y="150" text-anchor="middle" class="svg-label">contribution</text>
+    </svg>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> The unit of contribution is not an individual paper; it is the pattern and meaning that emerge across the evidence base.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Primary Research and Review Research">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">07</div>
+  </header>
+  <div class="label">Conceptual Distinction</div>
+  <h1>Primary Research and Review Research</h1>
+  <div class="content">
+<div class="compare animate">
+  <div class="compare-side primary">
+    <div class="compare-icon">P</div><h2>Primary Research</h2>
+    <p>Produces new observations, measurements, experiments, interviews, models, or cases.</p>
+    <ul><li>Unit of analysis: participants, sites, samples, sensors, or events.</li><li>Main question: what happened in the investigated setting?</li><li>Contribution: new empirical evidence.</li></ul>
+  </div>
+  <div class="versus">VS</div>
+  <div class="compare-side review">
+    <div class="compare-icon">R</div><h2>Review Research</h2>
+    <p>Produces new understanding from previously published evidence.</p>
+    <ul><li>Unit of analysis: studies, reports, concepts, and findings.</li><li>Main question: what does the combined literature show?</li><li>Contribution: synthesis, explanation, framework, or agenda.</li></ul>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> A review article is still research. Its data are publications, and its validity depends on how those publications are identified, selected, evaluated, and synthesized.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Six Questions Every Review Should Answer">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">08</div>
+  </header>
+  <div class="label">Review Logic</div>
+  <h1>Six Questions Every Review Should Answer</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>What is known?</h3><p>Identify established concepts, dominant findings, and areas of consensus.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>How was evidence identified?</h3><p>Explain sources, search terms, dates, filters, and selection procedures.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>What patterns exist?</h3><p>Map trends, methods, contexts, clusters, and recurring relationships.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Where does evidence conflict?</h3><p>Examine contradictory findings, assumptions, definitions, and methodological choices.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>What remains unresolved?</h3><p>Identify empirical, conceptual, methodological, contextual, and practical gaps.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>What follows from the evidence?</h3><p>Develop a framework, explanation, recommendation, or future research agenda.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> A manuscript that cannot answer these six questions is usually still a literature summary rather than a publishable review.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="From Description to Synthesis">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">09</div>
+  </header>
+  <div class="label">Levels of Intellectual Work</div>
+  <h1>From Description to Synthesis</h1>
+  <div class="content">
+<div class="ladder animate">
+  <div style="--level:1"><b>Description</b><span>What papers, topics, methods, and contexts exist?</span></div>
+  <div style="--level:2"><b>Summary</b><span>What did individual studies report?</span></div>
+  <div style="--level:3"><b>Comparison</b><span>How do studies differ in design, context, or findings?</span></div>
+  <div style="--level:4"><b>Analysis</b><span>Why do the observed differences and patterns occur?</span></div>
+  <div style="--level:5"><b>Synthesis</b><span>What new explanation or framework follows from the combined evidence?</span></div>
+</div>
+<div class="example-strip animate">
+  <b>Example progression:</b> “Most studies use sensors” → “sensor types differ by application” →
+  “real-time systems depend on data interoperability and validation” → “a multi-layer integration framework is required.”
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Good review writing moves upward on this ladder. The final manuscript should not remain at the description or summary level.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Why Review Articles Matter">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">10</div>
+  </header>
+  <div class="label">Scholarly Value</div>
+  <h1>Why Review Articles Matter</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Consolidate fragmented knowledge</h3><p>Bring findings scattered across disciplines, methods, and terminology into one interpretable structure.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Evaluate field maturity</h3><p>Show whether the field is exploratory, fragmented, consolidating, or methodologically mature.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Explain convergence and conflict</h3><p>Identify where studies agree, where they disagree, and why those differences occur.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Improve future study design</h3><p>Reveal recurring weaknesses in sampling, measurement, validation, comparison, and reporting.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Create conceptual contributions</h3><p>Develop taxonomies, models, frameworks, mechanisms, and research agendas.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Support decisions</h3><p>Translate complex literature into useful guidance for researchers, practitioners, policy makers, or institutions.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> The strongest reviews reduce uncertainty: they help readers understand not only what has been studied, but how to think and act next.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Major Review Designs">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">11</div>
+  </header>
+  <div class="label">Methodological Choice</div>
+  <h1>Major Review Designs</h1>
+  <div class="content">
+<div class="review-wheel animate">
+  <div class="wheel-center"><b>Choose by</b><span>question, field maturity, evidence type, and expected contribution</span></div>
+  <div class="wheel-item w1"><b>Narrative</b><span>broad interpretation</span></div>
+  <div class="wheel-item w2"><b>Systematic</b><span>focused reproducible selection</span></div>
+  <div class="wheel-item w3"><b>Scoping</b><span>map broad or emerging fields</span></div>
+  <div class="wheel-item w4"><b>Bibliometric</b><span>publication and intellectual structure</span></div>
+  <div class="wheel-item w5"><b>Integrative</b><span>combine evidence traditions</span></div>
+  <div class="wheel-item w6"><b>Critical</b><span>challenge assumptions</span></div>
+  <div class="wheel-item w7"><b>Meta-analysis</b><span>quantitative effect synthesis</span></div>
+  <div class="wheel-item w8"><b>Hybrid</b><span>mapping plus qualitative synthesis</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> The review label must match the actual method. Calling a manuscript “systematic” creates expectations for a protocol, reproducible search, eligibility criteria, screening record, and transparent reporting.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Selecting the Appropriate Review Design">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">12</div>
+  </header>
+  <div class="label">Decision Rules</div>
+  <h1>Selecting the Appropriate Review Design</h1>
+  <div class="content">
+<div class="decision-tree animate">
+  <div class="decision root">What does the review need to achieve?</div>
+  <div class="branches">
+    <div><span>Focused answer</span><b>Systematic review / meta-analysis</b><small>Use when a precise question and comparable evidence permit controlled synthesis.</small></div>
+    <div><span>Broad evidence map</span><b>Scoping review</b><small>Use when terminology, methods, and boundaries are still emerging.</small></div>
+    <div><span>Publication structure</span><b>Bibliometric review</b><small>Use when growth, networks, sources, citations, or conceptual clusters are central.</small></div>
+    <div><span>New conceptual explanation</span><b>Integrative, critical, or hybrid review</b><small>Use when the contribution depends on connecting theories, mechanisms, and evidence streams.</small></div>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Do not select a design because it sounds prestigious. Select it because its assumptions and outputs fit the question and evidence.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="The Contribution Test">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">13</div>
+  </header>
+  <div class="label">Scholarly Contribution</div>
+  <h1>The Contribution Test</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Framework</h3><p>Organizes relationships among concepts, technologies, variables, mechanisms, or stages.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Taxonomy</h3><p>Classifies the literature into defensible categories that improve understanding.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Research agenda</h3><p>Translates evidence-derived gaps into specific and prioritized future studies.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Critical insight</h3><p>Reveals unsupported assumptions, inconsistent definitions, biases, or methodological weaknesses.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Decision support</h3><p>Converts evidence into criteria, pathways, or recommendations for practice and policy.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Theoretical integration</h3><p>Connects fragmented research streams into a stronger explanation of how and why phenomena occur.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> Complete this sentence precisely: “After reading this review, readers will understand ______ more clearly than before.”</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Choosing a Publishable Topic">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">14</div>
+  </header>
+  <div class="label">Part II</div>
+  <h1>Choosing a Publishable Topic</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Transform a broad interest into a significant, feasible, and contribution-oriented review concept.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="An Interesting Topic Is Not Automatically Publishable">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">15</div>
+  </header>
+  <div class="label">Topic Selection</div>
+  <h1>An Interesting Topic Is Not Automatically Publishable</h1>
+  <div class="content">
+<div class="funnel animate">
+  <div class="funnel-band"><b>Broad interest</b><span>“Artificial intelligence in cities”</span></div>
+  <div class="funnel-band"><b>Research problem</b><span>Evidence is fragmented across sensing, analytics, simulation, and governance.</span></div>
+  <div class="funnel-band"><b>Review gap</b><span>Existing reviews map technologies but do not explain integration mechanisms.</span></div>
+  <div class="funnel-band"><b>Review question</b><span>How are GeoAI-enabled environmental digital twins designed and validated?</span></div>
+  <div class="funnel-band"><b>Expected contribution</b><span>Integrated architecture and research agenda.</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Start with a knowledge problem, not a fashionable keyword. A topic becomes publishable only after its gap, scope, question, and contribution are made explicit.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Criteria for a Publishable Review Topic">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">16</div>
+  </header>
+  <div class="label">Topic Evaluation</div>
+  <h1>Criteria for a Publishable Review Topic</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Significance</h3><p>The issue matters scientifically, theoretically, methodologically, socially, or practically.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Novelty</h3><p>Existing reviews have not already produced the same synthesis and contribution.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Evidence sufficiency</h3><p>Enough relevant studies appear to exist for a credible analysis.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Feasibility</h3><p>The team has sufficient time, access, expertise, software, and reading capacity.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Journal fit</h3><p>A realistic journal audience is likely to value the review question and contribution.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Contribution clarity</h3><p>The expected output can be named: framework, taxonomy, critique, model, or agenda.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> A strong topic is located at the intersection of importance, novelty, available evidence, feasibility, and publication fit.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Seven Forms of Novelty in Review Articles">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">17</div>
+  </header>
+  <div class="label">Novelty Positioning</div>
+  <h1>Seven Forms of Novelty in Review Articles</h1>
+  <div class="content">
+<div class="novelty-map animate">
+  <div><b>Topical</b><span>Reviews a newly emerging phenomenon.</span></div>
+  <div><b>Temporal</b><span>Updates evidence after major scientific or technological developments.</span></div>
+  <div><b>Contextual</b><span>Examines a region, sector, population, or application not adequately synthesized.</span></div>
+  <div><b>Methodological</b><span>Uses a new review design, analytical technique, or evidence-integration approach.</span></div>
+  <div><b>Integrative</b><span>Connects previously separated research streams.</span></div>
+  <div><b>Conceptual</b><span>Develops a new framework, model, mechanism, or taxonomy.</span></div>
+  <div><b>Critical</b><span>Challenges assumptions, terminology, validation practices, or dominant interpretations.</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Novelty rarely means that no paper exists. Review novelty often comes from a new combination, comparison, interpretation, classification, or conceptual synthesis.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Writing a Four-Part Gap Statement">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">18</div>
+  </header>
+  <div class="label">Gap Formulation</div>
+  <h1>Writing a Four-Part Gap Statement</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Current knowledge</b><small>What has the field already established?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Limitation</b><small>What remains fragmented, inconsistent, weak, or unclear?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Consequence</b><small>Why does this limitation matter for science or practice?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Contribution</b><small>How will the proposed review address the problem?</small></div></div>
+<div class="worked-example animate">
+  <div class="example-title">Worked example</div>
+  <p>Although environmental digital-twin research has expanded, evidence remains dispersed across smart-city, geospatial, IoT, simulation, and artificial-intelligence literatures. This fragmentation limits a clear understanding of how environmental sensing, GeoAI analytics, three-dimensional representation, and decision support are integrated and validated. Therefore, the review maps the evidence and synthesizes an integrated framework for GeoAI-enabled environmental digital twins.</p>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> “There are few studies” is not enough. A defensible gap explains the state of knowledge, the unresolved limitation, its consequence, and the proposed contribution.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Review Saturation and Literature Sufficiency">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">19</div>
+  </header>
+  <div class="label">Feasibility Check</div>
+  <h1>Review Saturation and Literature Sufficiency</h1>
+  <div class="content">
+<div class="columns equal">
+  <div class="card large accent-gold animate">
+    <h3>Review saturation</h3>
+    <p>Search for recent review articles with similar objectives, populations, technologies, contexts, and methods. Examine whether they already answer the proposed question.</p>
+    <div class="mini-check"><span>Same question?</span><span>Same period?</span><span>Same context?</span><span>Same contribution?</span></div>
+  </div>
+  <div class="card large accent-blue animate">
+    <h3>Literature sufficiency</h3>
+    <p>Run a rapid feasibility search to estimate whether the field contains enough potentially eligible evidence, without treating a fixed paper count as a scientific rule.</p>
+    <div class="mini-check"><span>Enough studies?</span><span>Accessible full text?</span><span>Usable metadata?</span><span>Comparable evidence?</span></div>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> A field can be saturated with reviews but still need a new synthesis if the previous reviews are outdated, narrow, methodologically weak, or conceptually fragmented.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Designing the Review Protocol">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">20</div>
+  </header>
+  <div class="label">Part III</div>
+  <h1>Designing the Review Protocol</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Create the control document that makes the review consistent, reproducible, and defensible.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Why the Protocol Must Be Prepared Early">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">21</div>
+  </header>
+  <div class="label">Protocol Logic</div>
+  <h1>Why the Protocol Must Be Prepared Early</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Controls arbitrary decisions</h3><p>Rules are written before all results and preferred conclusions are known.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Improves consistency</h3><p>The same criteria and decision logic are applied across records and reviewers.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Supports reproducibility</h3><p>Readers can reconstruct how the final evidence base was created.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Reveals feasibility problems</h3><p>Terminology, scope, access, workload, and data limitations become visible early.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Strengthens peer review</h3><p>Reviewers can assess whether the method supports the claimed review design.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Coordinates teamwork</h3><p>Roles, disagreements, amendments, and quality-control procedures are explicit.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> The protocol is the methodological backbone of the review, not administrative paperwork.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Architecture of a Review Protocol">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">22</div>
+  </header>
+  <div class="label">Protocol Components</div>
+  <h1>Architecture of a Review Protocol</h1>
+  <div class="content">
+<div class="protocol-grid animate">
+  <div><b>01</b><span>Rationale and gap</span></div><div><b>02</b><span>Objective and review questions</span></div><div><b>03</b><span>Review design</span></div><div><b>04</b><span>Conceptual definitions</span></div><div><b>05</b><span>Eligibility criteria</span></div><div><b>06</b><span>Information sources</span></div><div><b>07</b><span>Search plan</span></div><div><b>08</b><span>Record management</span></div><div><b>09</b><span>Screening procedure</span></div><div><b>10</b><span>Extraction form</span></div><div><b>11</b><span>Quality appraisal</span></div><div><b>12</b><span>Analysis and synthesis</span></div><div><b>13</b><span>Team roles</span></div><div><b>14</b><span>Registration and archiving</span></div><div><b>15</b><span>Amendments and limitations</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Every protocol component should answer a practical control question: what will be done, by whom, according to which rule, and how will it be documented?</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="From Review Question to Eligibility Criteria">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">23</div>
+  </header>
+  <div class="label">Operational Boundaries</div>
+  <h1>From Review Question to Eligibility Criteria</h1>
+  <div class="content">
+<div class="eligibility animate">
+  <div class="question-box">Review question<br><b>What evidence is needed?</b></div>
+  <div class="criterion-box"><b>Population / object</b><span>What systems, people, places, or phenomena are relevant?</span></div>
+  <div class="criterion-box"><b>Concept / intervention</b><span>Which technology, exposure, process, or construct must be present?</span></div>
+  <div class="criterion-box"><b>Context</b><span>Which sector, geography, application, or study setting is eligible?</span></div>
+  <div class="criterion-box"><b>Evidence type</b><span>Which methods, document types, languages, and publication periods are acceptable?</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Eligibility criteria should be observable and operational. Avoid vague rules such as “high quality,” “relevant,” or “important” unless those terms are defined.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Plan Analysis Before Retrieval">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">24</div>
+  </header>
+  <div class="label">Analytical Design</div>
+  <h1>Plan Analysis Before Retrieval</h1>
+  <div class="content">
+<div class="analysis-layers animate">
+  <div><span>01</span><b>Descriptive analysis</b><p>Years, sources, countries, authors, methods, contexts, and study characteristics.</p></div>
+  <div><span>02</span><b>Bibliometric analysis</b><p>Citations, co-authorship, co-occurrence, co-citation, bibliographic coupling, and thematic evolution.</p></div>
+  <div><span>03</span><b>Quality appraisal</b><p>Methodological clarity, validity, risk of bias, reporting completeness, and evidence confidence.</p></div>
+  <div><span>04</span><b>Thematic synthesis</b><p>Codes, categories, analytical themes, convergence, contradiction, and mechanisms.</p></div>
+  <div><span>05</span><b>Framework synthesis</b><p>Relationships among inputs, processes, contexts, outcomes, and implementation conditions.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Pre-specification reduces analytical drift: the team should know what evidence will be extracted and how it will answer each review question.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Search Strategy and Publish or Perish">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">25</div>
+  </header>
+  <div class="label">Part IV</div>
+  <h1>Search Strategy and Publish or Perish</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Translate the review question into executable search concepts and controlled retrieval.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Build Search Blocks from the Review Question">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">26</div>
+  </header>
+  <div class="label">Search Design</div>
+  <h1>Build Search Blocks from the Review Question</h1>
+  <div class="content">
+<div class="search-builder animate">
+  <div class="search-block"><label>Concept A</label><b>“digital twin*” OR “urban digital twin*”</b></div>
+  <div class="logic">AND</div>
+  <div class="search-block"><label>Concept B</label><b>GeoAI OR “geospatial artificial intelligence”</b></div>
+  <div class="logic">AND</div>
+  <div class="search-block"><label>Concept C</label><b>environment* OR climate OR flood* OR “air quality”</b></div>
+</div>
+<div class="grid grid-4 compact-grid">
+  <div class="card accent-gold animate"><h3>OR</h3><p>Combines synonyms and spelling variants inside one concept block.</p></div>
+  <div class="card accent-blue animate"><h3>AND</h3><p>Connects concept blocks required by the review question.</p></div>
+  <div class="card accent-green animate"><h3>“Phrase”</h3><p>Preserves multi-word concepts and increases precision.</p></div>
+  <div class="card accent-purple animate"><h3>Wildcard*</h3><p>Retrieves word variants when supported by the selected source.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> The search string is a methodological instrument. Weak concept translation produces a weak evidence base.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Balance Recall and Precision">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">27</div>
+  </header>
+  <div class="label">Search Quality</div>
+  <h1>Balance Recall and Precision</h1>
+  <div class="content">
+<div class="balance animate">
+  <div class="balance-side recall"><div class="scale-circle">R</div><h2>Recall</h2><p>How much of the relevant literature is retrieved?</p><ul><li>Add synonyms and terminology variants.</li><li>Search broader fields.</li><li>Test against benchmark papers.</li></ul></div>
+  <div class="balance-beam"><span></span></div>
+  <div class="balance-side precision"><div class="scale-circle">P</div><h2>Precision</h2><p>How much of the retrieved literature is actually relevant?</p><ul><li>Use exact phrases.</li><li>Restrict fields when justified.</li><li>Inspect recurring false positives.</li></ul></div>
+</div>
+<div class="flow"><div class="node animate"><b>Benchmark set</b><small>Known relevant papers</small></div><div class="arrow animate">→</div><div class="node animate"><b>Trial query</b><small>Initial retrieval</small></div><div class="arrow animate">→</div><div class="node animate"><b>Recall check</b><small>Which benchmark papers are missed?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Precision check</b><small>Which false positives dominate?</small></div><div class="arrow animate">→</div><div class="node animate"><b>Refine and log</b><small>Document every change</small></div></div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="What Publish or Perish Is—and Is Not">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">28</div>
+  </header>
+  <div class="label">PoP Concept</div>
+  <h1>What Publish or Perish Is—and Is Not</h1>
+  <div class="content">
+<div class="is-not animate">
+  <div class="is-panel">
+    <h2>Publish or Perish is…</h2>
+    <div><b>Retrieval interface</b><span>It sends searches to supported scholarly data sources.</span></div>
+    <div><b>Citation-analysis tool</b><span>It calculates indicators for a retrieved record set.</span></div>
+    <div><b>Export bridge</b><span>It transfers metadata to CSV, RIS, or BibTeX workflows.</span></div>
+  </div>
+  <div class="not-panel">
+    <h2>Publish or Perish is not…</h2>
+    <div><b>A review protocol</b><span>It does not define questions, criteria, or synthesis methods.</span></div>
+    <div><b>A quality filter</b><span>Highly cited records are not automatically strong or eligible.</span></div>
+    <div><b>The final corpus</b><span>Exports require cleaning, deduplication, and screening.</span></div>
+  </div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> PoP improves efficiency, but the author remains responsible for rigor, transparency, validity, interpretation, and contribution.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Publish or Perish Data-Flow Model">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">29</div>
+  </header>
+  <div class="label">PoP Workflow</div>
+  <h1>Publish or Perish Data-Flow Model</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Question</b><small>Review concept and search blocks</small></div><div class="arrow animate">→</div><div class="node animate"><b>PoP query</b><small>Source-specific execution</small></div><div class="arrow animate">→</div><div class="node animate"><b>Raw export</b><small>CSV, RIS, or BibTeX</small></div><div class="arrow animate">→</div><div class="node animate"><b>Candidate set</b><small>All retrieved records</small></div><div class="arrow animate">→</div><div class="node animate"><b>Clean database</b><small>Standardized and deduplicated</small></div><div class="arrow animate">→</div><div class="node animate"><b>Review corpus</b><small>Eligible studies</small></div><div class="arrow animate">→</div><div class="node animate"><b>Analytical corpus</b><small>Coded, appraised, synthesized</small></div></div>
+<div class="warning-strip animate"><b>Critical distinction:</b> 200 exported records do not mean 200 included studies. The export is only a candidate evidence set.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Selecting Scholarly Data Sources">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">30</div>
+  </header>
+  <div class="label">Source Strategy</div>
+  <h1>Selecting Scholarly Data Sources</h1>
+  <div class="content">
+<div class="source-cards animate">
+  <div><b>Google Scholar</b><span>Broad discovery</span><p>Useful for wide coverage, but metadata noise, duplicates, and changing counts require caution.</p></div>
+  <div><b>Scopus</b><span>Curated indexing</span><p>Strong structured metadata and citation relationships, but coverage follows indexed-source policies.</p></div>
+  <div><b>Web of Science</b><span>Curated citation history</span><p>Useful for established citation structures; access and discipline coverage vary.</p></div>
+  <div><b>OpenAlex</b><span>Open scholarly graph</span><p>Useful for open discovery and relationships; normalization and completeness vary.</p></div>
+  <div><b>Crossref</b><span>DOI metadata</span><p>Strong for identifier verification and publisher-deposited metadata, not a complete subject database.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Choose sources according to the review objective. Preserve source provenance before combining exports because each source has different coverage and metadata behavior.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="A Staged PoP Query Strategy">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">31</div>
+  </header>
+  <div class="label">Implementation</div>
+  <h1>A Staged PoP Query Strategy</h1>
+  <div class="content">
+<div class="stages animate">
+  <div><b>Stage 1</b><span>Discovery query</span><p>Use broad terms to understand terminology, benchmark papers, and false-positive patterns.</p></div>
+  <div><b>Stage 2</b><span>Sensitivity query</span><p>Add synonyms and variants to verify whether known relevant papers are retrieved.</p></div>
+  <div><b>Stage 3</b><span>Precision query</span><p>Use phrases, field restrictions, or carefully justified exclusions.</p></div>
+  <div><b>Stage 4</b><span>Formal retrieval</span><p>Execute the approved query and preserve the raw export without modification.</p></div>
+  <div><b>Stage 5</b><span>Update search</span><p>Repeat near submission when the review period requires recent evidence.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Iteration is methodologically acceptable when every query version, result count, problem, and revision rationale are recorded.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="What Must Be Recorded in the Search Log?">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">32</div>
+  </header>
+  <div class="label">Search Documentation</div>
+  <h1>What Must Be Recorded in the Search Log?</h1>
+  <div class="content">
+<table class="teaching-table animate">
+<thead><tr><th>Field</th><th>What to record</th><th>Illustrative entry</th></tr></thead>
+<tbody>
+<tr><td>Query ID</td><td>Unique identifier linked to chapter or review question.</td><td>CH05-S01</td></tr>
+<tr><td>Purpose</td><td>Discovery, testing, formal retrieval, verification, or update.</td><td>Formal retrieval</td></tr>
+<tr><td>Source</td><td>Database and interface used.</td><td>Scopus via PoP</td></tr>
+<tr><td>Date and time</td><td>Execution timestamp and time zone.</td><td>11 July 2026, 21:55 ICT</td></tr>
+<tr><td>Exact query</td><td>The complete source-specific text entered.</td><td>“Publish or Perish” AND bibliometric analysis</td></tr>
+<tr><td>Filters and limits</td><td>Years, fields, document boundaries, and maximum records.</td><td>2015–2026; maximum 200</td></tr>
+<tr><td>Result and export</td><td>Returned count, exported count, and raw filename.</td><td>200; CH05_S01_raw.csv</td></tr>
+<tr><td>Decision</td><td>Retain, revise, reject, or use only for exploration.</td><td>Retained after benchmark check</td></tr>
+</tbody></table>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Interpreting Citation Metrics Responsibly">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">33</div>
+  </header>
+  <div class="label">PoP Metrics</div>
+  <h1>Interpreting Citation Metrics Responsibly</h1>
+  <div class="content">
+<div class="metric-explain animate">
+  <div><b>Total citations</b><span>Overall visibility in the selected source.</span><small>Influenced by age, field, coverage, and outliers.</small></div>
+  <div><b>Citations per year</b><span>Approximate age-adjusted citation intensity.</span><small>Still unstable for recent records and source dependent.</small></div>
+  <div><b>h-index</b><span>h records have at least h citations.</span><small>Describes a result set; it is not a quality or inclusion rule.</small></div>
+  <div><b>g-index</b><span>Gives more weight to highly cited publications.</span><small>Can be dominated by a small number of extreme records.</small></div>
+</div>
+<div class="equation-panel animate">
+  <div><span>Influence</span> ≠ <span>Relevance</span> ≠ <span>Methodological quality</span> ≠ <span>Eligibility</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Use citation metrics to orient the field and identify seed papers. Use eligibility criteria—not citations—to decide inclusion.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Analysis of the Uploaded PoP Exports">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">34</div>
+  </header>
+  <div class="label">Part V</div>
+  <h1>Analysis of the Uploaded PoP Exports</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Use the seven real Scopus-through-PoP exports to understand ten-year trends, sources, document types, and retrieval limitations.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Dataset Used for the Teaching Analysis">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">35</div>
+  </header>
+  <div class="label">Real Export Overview</div>
+  <h1>Dataset Used for the Teaching Analysis</h1>
+  <div class="content">
+<div class="metrics-grid animate">
+  <div><b>1,219</b><span>raw records across seven exports</span></div>
+  <div><b>1,189</b><span>unique normalized titles</span></div>
+  <div><b>1,150</b><span>unique non-missing DOIs</span></div>
+  <div><b>2015–2026</b><span>observed publication range</span></div>
+  <div><b>454,204</b><span>total source-reported citations</span></div>
+  <div><b>108</b><span>median citations per record</span></div>
+  <div><b>372.6</b><span>mean citations per record</span></div>
+  <div><b>Scopus</b><span>data source accessed through PoP</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> These statistics describe the raw candidate dataset, not the final evidence base. They include broad cross-disciplinary records and require relevance screening.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Ten-Year Publication Trend in the Exports">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">36</div>
+  </header>
+  <div class="label">Trend Analysis</div>
+  <h1>Ten-Year Publication Trend in the Exports</h1>
+  <div class="content">
+<div class="columns chart-columns">
+  <div class="chart-box animate"><div id="yearChart" class="chart"></div></div>
+  <div class="interpretation animate">
+    <h2>How to interpret the curve</h2>
+    <p>The combined exports rise from <b>86 records in 2015</b> to a peak of <b>148 in 2021</b>. Counts remain high in 2022–2023, then fall in 2024–2026.</p>
+    <p>This decline should <b>not</b> immediately be interpreted as a decline in review research. The exports were capped or query-specific, and recent indexing may be incomplete.</p>
+    <div class="insight"><b>Teaching inference</b><span>The chart mainly shows the temporal composition of these searches, not the global population of review articles.</span></div>
+  </div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="What Drove the Apparent Growth?">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">37</div>
+  </header>
+  <div class="label">Trend Interpretation</div>
+  <h1>What Drove the Apparent Growth?</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Expansion of evidence-based practice</h3><p>More disciplines require transparent synthesis before policy, clinical, technological, or design decisions.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Rapid technological change</h3><p>AI, digital platforms, sustainability, and data-intensive research generate fragmented evidence that needs consolidation.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Maturation of review standards</h3><p>Reporting guidelines, protocols, and screening platforms have increased methodological visibility.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Bibliometric tool adoption</h3><p>PoP, VOSviewer, bibliometrix, and open scholarly graphs make large-scale mapping more accessible.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Interdisciplinary research</h3><p>Complex problems increasingly connect health, environment, engineering, education, business, and computing.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Publication incentives</h3><p>Review articles can provide high visibility, but quantity incentives may also encourage weak or redundant reviews.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> Trend growth is meaningful only when interpreted together with search design, source coverage, indexing delays, and review saturation.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Where Were the Retrieved Papers Published?">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">38</div>
+  </header>
+  <div class="label">Journal Distribution</div>
+  <h1>Where Were the Retrieved Papers Published?</h1>
+  <div class="content">
+<div class="columns chart-columns">
+  <div class="chart-box animate"><div id="sourceChart" class="chart"></div></div>
+  <div class="interpretation animate">
+    <h2>What the source profile reveals</h2>
+    <p>The most frequent source is <b>European Urology (38)</b>, followed by the <b>Journal of Cleaner Production (31)</b>. Health, sustainability, environmental science, computing, and business venues are all represented.</p>
+    <p>This dispersion confirms that the seven queries produced a <b>heterogeneous cross-disciplinary candidate set</b>.</p>
+    <div class="insight"><b>Methodological implication</b><span>Source frequency helps orient the corpus, but it is not evidence of journal quality or final relevance.</span></div>
+  </div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Document-Type Composition">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">39</div>
+  </header>
+  <div class="label">Corpus Diagnostics</div>
+  <h1>Document-Type Composition</h1>
+  <div class="content">
+<div class="columns chart-columns reverse">
+  <div class="interpretation animate">
+    <h2>Why document type matters</h2>
+    <p>The exports contain <b>594 records classified as Article</b> and <b>551 as Review</b>, plus conference papers and smaller categories.</p>
+    <p>Database document-type labels are not always identical to methodological design. A record labelled “Article” may still contain a systematic review, while “Review” can cover very different methods.</p>
+    <div class="insight"><b>Screening rule</b><span>Verify review design from the title, abstract, and methods rather than relying only on the source label.</span></div>
+  </div>
+  <div class="chart-box animate"><div id="typeChart" class="chart"></div></div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Focused Analysis: Publications Mentioning Publish or Perish">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">40</div>
+  </header>
+  <div class="label">PoP Utilization Trend</div>
+  <h1>Focused Analysis: Publications Mentioning Publish or Perish</h1>
+  <div class="content">
+<div class="columns chart-columns">
+  <div class="chart-box animate"><div id="popChart" class="chart"></div></div>
+  <div class="interpretation animate">
+    <h2>Observed use in the CH05 search</h2>
+    <p>The 200-record PoP-focused export shows a strong rise after 2020, reaching <b>45 records in 2022</b> and <b>52 in 2023</b>. The query primarily retrieves papers that mention PoP as part of literature searching or bibliometric analysis.</p>
+    <p>This does not measure all global PoP users; it measures <b>Scopus-indexed publications returned by the specific query</b>.</p>
+    <div class="insight"><b>Practical interpretation</b><span>PoP is increasingly embedded in bibliometric, literature-review, and research-evaluation workflows across many disciplines.</span></div>
+  </div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="How Publish or Perish Has Been Used in the Last Decade">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">41</div>
+  </header>
+  <div class="label">Use-Case Evolution</div>
+  <h1>How Publish or Perish Has Been Used in the Last Decade</h1>
+  <div class="content">
+<div class="timeline animate">
+  <div><b>2015–2017</b><span>Author and journal citation profiling</span><p>PoP was often used to retrieve citation counts and calculate author-level indicators.</p></div>
+  <div><b>2018–2020</b><span>Bibliometric mapping support</span><p>Exports increasingly fed visualization tools and spreadsheet-based publication analyses.</p></div>
+  <div><b>2021–2023</b><span>Review-method integration</span><p>PoP appeared more frequently in systematic, scoping, and bibliometric review workflows.</p></div>
+  <div><b>2024–2026</b><span>Multi-source and reproducible workflows</span><p>Greater emphasis is placed on provenance, query logs, DOI validation, open metadata, and integration with other tools.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> The methodological direction is shifting from “retrieve and count” toward “document, validate, integrate, and reproduce.”</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Limits of the Ten-Year Analysis">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">42</div>
+  </header>
+  <div class="label">Analytical Caution</div>
+  <h1>Limits of the Ten-Year Analysis</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Query dependence</h3><p>The observed trend is shaped by the exact search strings and concept combinations.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Result caps</h3><p>Several exports reached 200 records, so annual counts do not represent a complete population.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Source dependence</h3><p>Scopus coverage differs from Google Scholar, Web of Science, OpenAlex, and Crossref.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Recent-year incompleteness</h3><p>2025–2026 records may not yet be fully indexed or cited.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Cross-disciplinary noise</h3><p>Broad searches retrieved clinical guidelines, environmental papers, education studies, and other domains.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Citation instability</h3><p>Citation counts change over time and differ among data sources.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> The correct claim is: “The uploaded PoP/Scopus exports show…”—not “all global review publications show…”</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="From Records to Evidence">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">43</div>
+  </header>
+  <div class="label">Part VI</div>
+  <h1>From Records to Evidence</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Transform raw exports into a clean, auditable database and a defensible review corpus.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Candidate Set, Review Corpus, and Analytical Corpus">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">44</div>
+  </header>
+  <div class="label">Evidence States</div>
+  <h1>Candidate Set, Review Corpus, and Analytical Corpus</h1>
+  <div class="content">
+<div class="corpus-flow animate">
+  <div><span>1,219 raw records</span><b>Candidate set</b><p>All retrieved records, including duplicates, false positives, incomplete metadata, and ineligible studies.</p></div>
+  <div class="corpus-arrow">→</div>
+  <div><span>after cleaning and screening</span><b>Review corpus</b><p>Studies that satisfy the eligibility criteria after title, abstract, and full-text assessment.</p></div>
+  <div class="corpus-arrow">→</div>
+  <div><span>after extraction and appraisal</span><b>Analytical corpus</b><p>Included studies that have been coded, evaluated, compared, and synthesized.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> The integrity of the review depends on documenting how records move from one evidence state to the next.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Preserve Raw Data and Provenance">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">45</div>
+  </header>
+  <div class="label">Data Governance</div>
+  <h1>Preserve Raw Data and Provenance</h1>
+  <div class="content">
+<div class="folder-visual animate">
+  <div class="folder"><b>00_protocol</b><span>questions, criteria, amendments</span></div>
+  <div class="folder"><b>01_raw_exports</b><span>unchanged files from each source and query</span></div>
+  <div class="folder"><b>02_clean_database</b><span>standardized metadata and master records</span></div>
+  <div class="folder"><b>03_screening</b><span>reviewer decisions and exclusions</span></div>
+  <div class="folder"><b>04_full_text</b><span>lawfully obtained reports and integrity checks</span></div>
+  <div class="folder"><b>05_extraction</b><span>evidence matrix and appraisal</span></div>
+  <div class="folder"><b>06_analysis</b><span>scripts, figures, tables, and synthesis</span></div>
+  <div class="folder"><b>07_manuscript</b><span>drafts, supplements, and submission files</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Never overwrite the raw export. Every cleaned record should retain its source file, query ID, retrieval date, and master-record identifier.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Hierarchical Deduplication Logic">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">46</div>
+  </header>
+  <div class="label">Database Cleaning</div>
+  <h1>Hierarchical Deduplication Logic</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Exact DOI</b><small>Normalize and match identifiers</small></div><div class="arrow animate">→</div><div class="node animate"><b>Exact title</b><small>Compare normalized titles</small></div><div class="arrow animate">→</div><div class="node animate"><b>Composite match</b><small>Author + year + title + source</small></div><div class="arrow animate">→</div><div class="node animate"><b>Fuzzy title</b><small>Inspect small textual differences</small></div><div class="arrow animate">→</div><div class="node animate"><b>Version relation</b><small>Preprint, conference, and journal versions</small></div><div class="arrow animate">→</div><div class="node animate"><b>Master record</b><small>Retain the richest verified metadata</small></div></div>
+<div class="three-risks animate">
+  <div><b>Under-deduplication</b><span>Inflates counts and can double-count evidence.</span></div>
+  <div><b>Controlled resolution</b><span>Preserves provenance and documents uncertain pairs.</span></div>
+  <div><b>Over-deduplication</b><span>Removes distinct studies that happen to look similar.</span></div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Metadata Normalization and Validation">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">47</div>
+  </header>
+  <div class="label">Data Quality</div>
+  <h1>Metadata Normalization and Validation</h1>
+  <div class="content">
+<div class="quality-matrix animate">
+  <div><b>Titles</b><span>Case, punctuation, whitespace, symbols, and language variants.</span></div>
+  <div><b>Authors</b><span>Initials, full names, ordering, diacritics, and institutional variants.</span></div>
+  <div><b>Years</b><span>Online-first date, issue date, and conflicting source records.</span></div>
+  <div><b>Sources</b><span>Journal abbreviations, renamed venues, series titles, and proceedings.</span></div>
+  <div><b>Identifiers</b><span>DOI syntax, URLs, Scopus IDs, ISBNs, and missing values.</span></div>
+  <div><b>Keywords</b><span>Singular/plural, abbreviations, synonyms, and spelling variants.</span></div>
+</div>
+<div class="qa-strip animate"><b>Quality assurance:</b> combine automated rules with manual sampling and documented resolution of conflicting metadata.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Study Selection as a Controlled Decision Process">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">48</div>
+  </header>
+  <div class="label">Screening</div>
+  <h1>Study Selection as a Controlled Decision Process</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Freeze database</b><small>Create a screening version</small></div><div class="arrow animate">→</div><div class="node animate"><b>Pilot criteria</b><small>Calibrate decisions</small></div><div class="arrow animate">→</div><div class="node animate"><b>Title screening</b><small>Remove obvious mismatches</small></div><div class="arrow animate">→</div><div class="node animate"><b>Abstract screening</b><small>Include, exclude, or unclear</small></div><div class="arrow animate">→</div><div class="node animate"><b>Full-text retrieval</b><small>Track availability and integrity</small></div><div class="arrow animate">→</div><div class="node animate"><b>Full-text assessment</b><small>Apply every eligibility criterion</small></div><div class="arrow animate">→</div><div class="node animate"><b>Final inclusion</b><small>Reconcile counts and reasons</small></div></div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Screening asks whether a study belongs in the review. Quality appraisal asks how much confidence or interpretive weight the included study deserves.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Screening Decisions and Exclusion Reasons">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">49</div>
+  </header>
+  <div class="label">Screening Practice</div>
+  <h1>Screening Decisions and Exclusion Reasons</h1>
+  <div class="content">
+<div class="decision-cards animate">
+  <div class="include"><b>Include</b><span>The available evidence clearly satisfies the current-stage criteria.</span></div>
+  <div class="exclude"><b>Exclude</b><span>A specific criterion is not satisfied; record the primary reason.</span></div>
+  <div class="unclear"><b>Unclear</b><span>Insufficient information is available; retain the record for the next stage.</span></div>
+</div>
+<div class="worked-example animate">
+  <div class="example-title">Use precise full-text reasons</div>
+  <p><b>Good:</b> “No empirical or conceptual digital-twin component,” “outside the specified urban/environmental context,” or “conference abstract without sufficient methods.”<br>
+  <b>Weak:</b> “Not relevant.”</p>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Build an Evidence-Extraction Matrix">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">50</div>
+  </header>
+  <div class="label">Data Extraction</div>
+  <h1>Build an Evidence-Extraction Matrix</h1>
+  <div class="content">
+<table class="teaching-table animate">
+<thead><tr><th>Field group</th><th>Examples</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Provenance</td><td>Source, query ID, retrieval date, master ID.</td><td>Connects each study to the search and cleaning trail.</td></tr>
+<tr><td>Bibliographic</td><td>Title, authors, year, journal, DOI, country.</td><td>Supports description and referencing.</td></tr>
+<tr><td>Methodological</td><td>Design, data, sample, tools, validation, limitations.</td><td>Explains how findings were produced.</td></tr>
+<tr><td>Substantive</td><td>Concepts, technologies, contexts, outcomes, findings.</td><td>Provides evidence for comparison and synthesis.</td></tr>
+<tr><td>Interpretive</td><td>Codes, themes, mechanism, gap, contribution.</td><td>Moves from extraction toward analytical explanation.</td></tr>
+<tr><td>Quality</td><td>Validity, bias, reporting completeness, confidence.</td><td>Qualifies the strength of review claims.</td></tr>
+</tbody></table>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Separate direct author-reported findings from the review team’s interpretation and coding.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Analysis and Synthesis">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">51</div>
+  </header>
+  <div class="label">Part VII</div>
+  <h1>Analysis and Synthesis</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Use quantitative mapping to describe the field and qualitative synthesis to explain what the evidence means.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Descriptive Analysis: What Does the Corpus Contain?">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">52</div>
+  </header>
+  <div class="label">Analytical Layer 1</div>
+  <h1>Descriptive Analysis: What Does the Corpus Contain?</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Temporal profile</h3><p>Publication counts, phases of growth, and incomplete recent years.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Source profile</h3><p>Core journals, disciplinary dispersion, and publication venues.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Geographic profile</h3><p>Countries, regions, institutions, and collaboration patterns.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Method profile</h3><p>Study designs, data sources, software, validation, and analytical techniques.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Context profile</h3><p>Application domains, populations, environmental settings, and implementation conditions.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Evidence profile</h3><p>Outcomes, findings, limitations, and quality or confidence levels.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> Descriptive analysis establishes the shape of the evidence base before deeper interpretation begins.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Bibliometric Analysis: Mapping the Field">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">53</div>
+  </header>
+  <div class="label">Analytical Layer 2</div>
+  <h1>Bibliometric Analysis: Mapping the Field</h1>
+  <div class="content">
+<div class="network-visual animate">
+  <svg viewBox="0 0 700 360" class="full-svg">
+    <g stroke="#d6c9bb" stroke-width="2">
+      <line x1="350" y1="180" x2="160" y2="80"/><line x1="350" y1="180" x2="550" y2="80"/><line x1="350" y1="180" x2="115" y2="245"/><line x1="350" y1="180" x2="575" y2="255"/>
+      <line x1="160" y1="80" x2="115" y2="245"/><line x1="550" y1="80" x2="575" y2="255"/>
+    </g>
+    <circle cx="350" cy="180" r="58" fill="#7a1f2b"/><text x="350" y="175" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">FIELD</text><text x="350" y="198" text-anchor="middle" fill="#f7e7c7" font-size="13">structure</text>
+    <circle cx="160" cy="80" r="45" fill="#315d8a"/><text x="160" y="85" text-anchor="middle" fill="#fff" font-size="14">Keywords</text>
+    <circle cx="550" cy="80" r="45" fill="#166847"/><text x="550" y="85" text-anchor="middle" fill="#fff" font-size="14">Authors</text>
+    <circle cx="115" cy="245" r="45" fill="#786ca8"/><text x="115" y="250" text-anchor="middle" fill="#fff" font-size="14">Sources</text>
+    <circle cx="575" cy="255" r="45" fill="#d39d3f"/><text x="575" y="260" text-anchor="middle" fill="#fff" font-size="14">Citations</text>
+  </svg>
+</div>
+<div class="grid grid-4 compact-grid">
+  <div class="card animate"><h3>Co-occurrence</h3><p>Which concepts appear together?</p></div>
+  <div class="card animate"><h3>Co-authorship</h3><p>Who collaborates with whom?</p></div>
+  <div class="card animate"><h3>Co-citation</h3><p>Which works form shared foundations?</p></div>
+  <div class="card animate"><h3>Coupling</h3><p>Which recent studies share references?</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Maps show structure; the author must still explain why clusters exist, how they differ, and what they mean for the review question.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="From Codes to Analytical Themes">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">54</div>
+  </header>
+  <div class="label">Thematic Synthesis</div>
+  <h1>From Codes to Analytical Themes</h1>
+  <div class="content">
+<div class="flow"><div class="node animate"><b>Extract findings</b><small>Capture evidence relevant to the review questions</small></div><div class="arrow animate">→</div><div class="node animate"><b>Initial coding</b><small>Assign concise meaning labels</small></div><div class="arrow animate">→</div><div class="node animate"><b>Group codes</b><small>Create categories and pattern families</small></div><div class="arrow animate">→</div><div class="node animate"><b>Develop themes</b><small>Form evidence-supported analytical claims</small></div><div class="arrow animate">→</div><div class="node animate"><b>Relate themes</b><small>Explain mechanisms and interactions</small></div><div class="arrow animate">→</div><div class="node animate"><b>Identify gaps</b><small>Derive a future research agenda</small></div></div>
+<div class="theme-test animate">
+  <b>A topic is not automatically a theme.</b>
+  <span>“Data integration” is a topic.</span>
+  <span>“Interoperability limitations prevent environmental twins from moving from visualization to predictive decision support” is an analytical theme.</span>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Convergence, Contradiction, and Mechanism">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">55</div>
+  </header>
+  <div class="label">Analytical Reasoning</div>
+  <h1>Convergence, Contradiction, and Mechanism</h1>
+  <div class="content">
+<div class="triad animate">
+  <div class="convergence"><b>Convergence</b><p>Which findings are consistently supported across studies, methods, and contexts?</p></div>
+  <div class="contradiction"><b>Contradiction</b><p>Which findings differ, and can the differences be explained by design, context, definitions, or evidence quality?</p></div>
+  <div class="mechanism"><b>Mechanism</b><p>What relationships explain how inputs, processes, conditions, and outcomes interact?</p></div>
+</div>
+<div class="example-strip animate"><b>Analytical sentence pattern:</b> “Although most studies report X, this relationship weakens when Y is absent, suggesting that Z functions as a necessary implementation condition.”</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Identify Research Gaps Systematically">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">56</div>
+  </header>
+  <div class="label">Gap Synthesis</div>
+  <h1>Identify Research Gaps Systematically</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Empirical gap</h3><p>Important settings, populations, locations, or conditions remain under-studied.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Methodological gap</h3><p>Validation, sampling, comparison, measurement, or reproducibility remains weak.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Conceptual gap</h3><p>Key constructs are undefined, overlapping, or inconsistently operationalized.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Integration gap</h3><p>Related research streams remain disconnected from one coherent explanation.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Practical gap</h3><p>Evidence does not yet support implementation, scaling, governance, or decision making.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Critical gap</h3><p>Risks, ethics, equity, assumptions, limitations, or unintended consequences are neglected.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> Every future research recommendation should be traceable to an observed limitation in the evidence matrix.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Developing a Conceptual Framework">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">57</div>
+  </header>
+  <div class="label">Framework Synthesis</div>
+  <h1>Developing a Conceptual Framework</h1>
+  <div class="content">
+<div class="framework animate">
+  <div class="framework-layer inputs"><b>Inputs</b><span>data, technology, actors, resources</span></div>
+  <div class="framework-arrow">→</div>
+  <div class="framework-layer processes"><b>Processes</b><span>integration, analytics, simulation, validation</span></div>
+  <div class="framework-arrow">→</div>
+  <div class="framework-layer outputs"><b>Outputs</b><span>knowledge, prediction, visualization, recommendations</span></div>
+  <div class="framework-arrow">→</div>
+  <div class="framework-layer outcomes"><b>Outcomes</b><span>decisions, performance, sustainability, resilience</span></div>
+  <div class="context-band"><b>Context and conditions:</b> governance · interoperability · data quality · ethics · user capacity · scale</div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> A framework should be derived from the evidence, explain relationships, and show where uncertainty or validation gaps remain.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide section-slide" data-title="Writing and Submission">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">58</div>
+  </header>
+  <div class="label">Part VIII</div>
+  <h1>Writing and Submission</h1>
+  <div class="content">
+      <div class="section-center animate">
+        <div class="section-orbit"></div>
+        <p>Convert the evidence workflow into a coherent manuscript and a journal-specific submission package.</p>
+      </div>
+    </div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Structure the Review as a Coherent Argument">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">59</div>
+  </header>
+  <div class="label">Manuscript Architecture</div>
+  <h1>Structure the Review as a Coherent Argument</h1>
+  <div class="content">
+<div class="manuscript-stack animate">
+  <div><b>Title and abstract</b><span>Signal topic, review design, evidence base, main finding, and contribution.</span></div>
+  <div><b>Introduction</b><span>Establish significance, previous reviews, unresolved gap, objective, questions, and novelty.</span></div>
+  <div><b>Methods</b><span>Make searching, cleaning, screening, extraction, appraisal, and analysis reconstructable.</span></div>
+  <div><b>Results</b><span>Report selection counts, corpus characteristics, maps, quality profile, and themes.</span></div>
+  <div><b>Discussion</b><span>Explain meaning, mechanisms, contribution, implications, limitations, and research agenda.</span></div>
+  <div><b>Conclusion</b><span>Answer the objective concisely without introducing new evidence.</span></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Results report what was found. Discussion explains what the findings mean and why they matter.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Writing an Analytical Paragraph">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">60</div>
+  </header>
+  <div class="label">Academic Writing</div>
+  <h1>Writing an Analytical Paragraph</h1>
+  <div class="content">
+<div class="paragraph-builder animate">
+  <div><b>1. Claim</b><span>State the analytical point or pattern.</span></div>
+  <div><b>2. Evidence</b><span>Support it using multiple studies, tables, or mapped results.</span></div>
+  <div><b>3. Comparison</b><span>Show convergence, variation, or contradiction.</span></div>
+  <div><b>4. Explanation</b><span>Interpret why the pattern occurs.</span></div>
+  <div><b>5. Implication</b><span>Connect the interpretation to theory, method, practice, or future research.</span></div>
+</div>
+<div class="worked-example animate"><div class="example-title">Paragraph logic</div><p>Studies increasingly integrate real-time sensing with urban digital twins; however, most systems remain visualization-oriented rather than simulation-enabled. This limitation is associated with inconsistent data models, insufficient validation, and weak interoperability between geospatial, IoT, and analytical components. Consequently, future work should evaluate end-to-end architectures rather than isolated technical modules.</p></div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Select a Journal by Fit, Not Quartile Alone">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">61</div>
+  </header>
+  <div class="label">Journal Strategy</div>
+  <h1>Select a Journal by Fit, Not Quartile Alone</h1>
+  <div class="content">
+<div class="journal-radar animate">
+  <div class="radar-center">Journal fit</div>
+  <div class="radar-item r1">Scope</div><div class="radar-item r2">Audience</div><div class="radar-item r3">Article type</div>
+  <div class="radar-item r4">Method expectations</div><div class="radar-item r5">Scopus status</div><div class="radar-item r6">APC & access</div>
+  <div class="radar-item r7">Trust</div><div class="radar-item r8">Time</div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> A high-quartile journal with weak scope or article-type fit is often a poorer target than a slightly lower-ranked journal whose readership and methods closely match the manuscript.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Prepare the Complete Submission Package">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">62</div>
+  </header>
+  <div class="label">Submission Readiness</div>
+  <h1>Prepare the Complete Submission Package</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Main manuscript</h3><p>Journal-formatted text with internally consistent tables, figures, citations, and metadata.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Cover letter</h3><p>Explain fit, originality, contribution, review design, and declarations.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Reporting checklist</h3><p>PRISMA or another applicable guideline with manuscript-page references.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Search supplement</h3><p>Full strings, sources, dates, filters, and update-search details.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Data supplement</h3><p>Included-study list, extraction fields, audit trail, and analytical materials.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Declarations</h3><p>Funding, conflicts, data availability, ethics, copyright, and generative-AI use.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> Technical and editorial checks occur before peer review. Inconsistency across files can delay or stop submission.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Respond to Peer Review with a Traceable Matrix">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">63</div>
+  </header>
+  <div class="label">Revision</div>
+  <h1>Respond to Peer Review with a Traceable Matrix</h1>
+  <div class="content">
+<table class="teaching-table animate">
+<thead><tr><th>Reviewer comment</th><th>Response logic</th><th>Manuscript action</th></tr></thead>
+<tbody>
+<tr><td>Clarify eligibility criteria.</td><td>Acknowledge ambiguity, explain the revised operational rule.</td><td>Methods revised; criteria table added.</td></tr>
+<tr><td>Why were these sources selected?</td><td>Explain coverage, complementarity, access, and limitations.</td><td>Information-source rationale expanded.</td></tr>
+<tr><td>Interpretation is too strong.</td><td>Reassess evidence, qualify the claim, or provide stronger support.</td><td>Confidence language and discussion revised.</td></tr>
+<tr><td>Include more recent evidence.</td><td>Conduct an update search or justify the cutoff.</td><td>Search log, flow counts, database, and results updated.</td></tr>
+</tbody></table>
+<div class="warning-strip animate"><b>Never answer only “Done.”</b> State what changed, where it changed, and why the revision resolves the concern.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Common Mistakes That Reduce Publishability">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">64</div>
+  </header>
+  <div class="label">Final Diagnostic</div>
+  <h1>Common Mistakes That Reduce Publishability</h1>
+  <div class="content"><div class="grid grid-3"><article class="card accent-gold animate">
+          <div class="card-index">01</div><h3>Method-label inflation</h3><p>Calling a review systematic without protocol, search trail, screening record, and reproducible methods.</p>
+        </article><article class="card accent-blue animate">
+          <div class="card-index">02</div><h3>Weak search strategy</h3><p>Using one keyword, no synonyms, no benchmark testing, and no source-specific documentation.</p>
+        </article><article class="card accent-green animate">
+          <div class="card-index">03</div><h3>Citation-metric misuse</h3><p>Treating citation count as a direct measure of relevance, quality, or eligibility.</p>
+        </article><article class="card accent-purple animate">
+          <div class="card-index">04</div><h3>Database disorder</h3><p>Editing or merging files before preserving raw exports and provenance.</p>
+        </article><article class="card accent-orange animate">
+          <div class="card-index">05</div><h3>Paper-by-paper writing</h3><p>Summarizing one article per paragraph without analytical themes or mechanisms.</p>
+        </article><article class="card accent-red animate">
+          <div class="card-index">06</div><h3>Journal mismatch</h3><p>Selecting a target by quartile alone without checking scope, audience, and review type.</p>
+        </article></div><div class="key-paragraph animate"><strong>Key understanding:</strong> These errors are prevented when the review is managed as a transparent research project rather than a reference-collection exercise.</div></div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="A 90-Day Implementation Plan">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">65</div>
+  </header>
+  <div class="label">Project Management</div>
+  <h1>A 90-Day Implementation Plan</h1>
+  <div class="content">
+<div class="project-timeline animate">
+  <div><b>Days 1–10</b><span>Topic, novelty, saturation, question</span><small>Topic matrix and gap statement</small></div>
+  <div><b>Days 11–20</b><span>Protocol and eligibility design</span><small>Protocol v1.0</small></div>
+  <div><b>Days 21–35</b><span>Trial queries and formal PoP retrieval</span><small>Search log and raw exports</small></div>
+  <div><b>Days 36–50</b><span>Cleaning and screening</span><small>Clean database and decision record</small></div>
+  <div><b>Days 51–65</b><span>Extraction, appraisal, mapping</span><small>Evidence matrix and figures</small></div>
+  <div><b>Days 66–80</b><span>Thematic and framework synthesis</span><small>Complete manuscript draft</small></div>
+  <div><b>Days 81–90</b><span>Journal fit and submission preparation</span><small>Submission-ready package</small></div>
+</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="Student Capstone Deliverables">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">66</div>
+  </header>
+  <div class="label">Assessment</div>
+  <h1>Student Capstone Deliverables</h1>
+  <div class="content">
+<div class="deliverables animate">
+  <div><span>01</span><b>Review concept</b><p>Problem, gap, question, design, and expected contribution.</p></div>
+  <div><span>02</span><b>Protocol</b><p>Eligibility, sources, search plan, screening, extraction, and synthesis.</p></div>
+  <div><span>03</span><b>PoP package</b><p>Query log, raw exports, metrics interpretation, and retrieval audit.</p></div>
+  <div><span>04</span><b>Clean evidence database</b><p>Master IDs, provenance, deduplication, screening, and full-text decisions.</p></div>
+  <div><span>05</span><b>Analytical outputs</b><p>Ten-year trend, sources, citations, themes, gaps, and framework.</p></div>
+  <div><span>06</span><b>Submission package</b><p>Manuscript, journal matrix, cover letter, supplements, and declarations.</p></div>
+</div>
+<div class="key-paragraph animate"><strong>Key understanding:</strong> Assessment should reward transparency, reasoning, evidence quality, synthesis, and contribution—not merely the number of downloaded papers.</div>
+</div>
+  <div class="footer-note">Structured teaching deck based on the uploaded book and PoP exports</div>
+</section>
+
+<section class="slide " data-title="The Practical Principle">
+  <header class="brand">
+    <div class="logo-mark">MSU</div>
+    <div class="course">Preparing Review Articles using Publish or Perish</div>
+    <div class="slide-number">67</div>
+  </header>
+  <div class="label">Conclusion</div>
+  <h1>The Practical Principle</h1>
+  <div class="content">
+<div class="closing animate">
+  <div class="closing-icon">✓</div>
+  <h2>Publish or Perish can accelerate discovery and citation exploration, but publication quality comes from transparent design, disciplined evidence management, critical synthesis, and journal-aware writing.</h2>
+  <div class="closing-chain">
+    <span>Search transparently</span><i>→</i><span>Clean systematically</span><i>→</i><span>Screen defensibly</span><i>→</i><span>Synthesize critically</span><i>→</i><span>Contribute clearly</span>
+  </div>
+  <p>The goal is not a long reference list. The goal is to transform a documented evidence base into a rigorous and useful scholarly contribution.</p>
+</div>
+</div>
+  <div class="footer-note">Evidence → analysis → synthesis → contribution</div>
+</section>
+
+</main>
+<div class="controls"><button id="prev" title="Previous">‹</button><button id="next" title="Next">›</button><button id="full" title="Fullscreen">F</button><button id="print" title="Print/PDF">P</button></div>
+<div class="help">← / → navigate · Space next · F fullscreen · P print/PDF</div>
+<div class="progress"><i id="progressBar"></i></div>
+<script>
+"use strict";
+const DATA={
+ years:[{"year": 2015, "value": 86}, {"year": 2016, "value": 70}, {"year": 2017, "value": 87}, {"year": 2018, "value": 116}, {"year": 2019, "value": 126}, {"year": 2020, "value": 142}, {"year": 2021, "value": 148}, {"year": 2022, "value": 126}, {"year": 2023, "value": 130}, {"year": 2024, "value": 77}, {"year": 2025, "value": 80}, {"year": 2026, "value": 31}],
+ sources:[{"label": "European Urology", "value": 38}, {"label": "Journal of Cleaner Production", "value": 31}, {"label": "Annals of the Rheumatic Diseases", "value": 15}, {"label": "Sustainability (Switzerland)", "value": 14}, {"label": "International Journal of Environmental Research and Public Health", "value": 12}, {"label": "Lecture Notes in Computer Science", "value": 11}, {"label": "Resources, Conservation and Recycling", "value": 9}, {"label": "Journal of Business Research", "value": 9}, {"label": "Heliyon", "value": 7}, {"label": "Science of the Total Environment", "value": 7}],
+ types:[{"label": "Article", "value": 594}, {"label": "Review", "value": 551}, {"label": "Conference Paper", "value": 52}, {"label": "Editorial", "value": 6}, {"label": "Book Chapter", "value": 5}, {"label": "Other", "value": 11}],
+ pop:[{"year": 2015, "value": 5}, {"year": 2016, "value": 4}, {"year": 2017, "value": 1}, {"year": 2018, "value": 4}, {"year": 2019, "value": 8}, {"year": 2020, "value": 12}, {"year": 2021, "value": 23}, {"year": 2022, "value": 45}, {"year": 2023, "value": 52}, {"year": 2024, "value": 31}, {"year": 2025, "value": 13}, {"year": 2026, "value": 2}]
+};
+document.addEventListener("DOMContentLoaded",()=>{
+ const slides=[...document.querySelectorAll(".slide")];
+ let index=Math.max(0,slides.findIndex(s=>s.classList.contains("active")));
+ const bar=document.getElementById("progressBar");
+ function show(i){
+  index=Math.max(0,Math.min(i,slides.length-1));
+  slides.forEach((s,j)=>{s.classList.toggle("active",j===index);s.setAttribute("aria-hidden",j===index?"false":"true")});
+  const active=slides[index]; [...active.querySelectorAll(".animate")].forEach((e,k)=>e.style.setProperty("--order",k+1));
+  renderCharts(active); bar.style.width=`${(index+1)/slides.length*100}%`;
+  document.title=`${index+1}/${slides.length} — ${active.dataset.title||"Review Articles"}`;
+ }
+ document.getElementById("prev").onclick=()=>show(index-1);
+ document.getElementById("next").onclick=()=>show(index+1);
+ document.getElementById("full").onclick=async()=>{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()};
+ document.getElementById("print").onclick=()=>window.print();
+ document.addEventListener("keydown",e=>{const k=e.key.toLowerCase();if(["arrowright","pagedown"," ","enter"].includes(k)){e.preventDefault();show(index+1)}else if(["arrowleft","pageup","backspace"].includes(k)){e.preventDefault();show(index-1)}else if(k==="home")show(0);else if(k==="end")show(slides.length-1);else if(k==="f")document.getElementById("full").click();else if(k==="p")window.print()});
+ let sx=0;document.addEventListener("touchstart",e=>sx=e.changedTouches[0].clientX,{passive:true});document.addEventListener("touchend",e=>{let d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>45)show(index+(d<0?1:-1))},{passive:true});
+ show(index);
+});
+function renderCharts(slide){
+ if(slide.dataset.rendered==="1")return;
+ if(slide.querySelector("#yearChart"))lineChart("yearChart",DATA.years,"year");
+ if(slide.querySelector("#popChart"))lineChart("popChart",DATA.pop,"year");
+ if(slide.querySelector("#sourceChart"))barChart("sourceChart",DATA.sources);
+ if(slide.querySelector("#typeChart"))donutChart("typeChart",DATA.types);
+ slide.dataset.rendered="1";
+}
+const NS="http://www.w3.org/2000/svg";
+function svg(el,box="0 0 800 420"){el.innerHTML="";let s=document.createElementNS(NS,"svg");s.setAttribute("viewBox",box);s.setAttribute("preserveAspectRatio","xMidYMid meet");el.appendChild(s);return s}
+function E(tag,a={},t=""){let e=document.createElementNS(NS,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(t)e.textContent=t;return e}
+function lineChart(id,data,xkey){
+ const c=document.getElementById(id),s=svg(c),W=800,H=420,m={t:35,r:25,b:55,l:55},cw=W-m.l-m.r,ch=H-m.t-m.b,max=Math.max(...data.map(d=>d.value));
+ for(let i=0;i<=5;i++){let y=m.t+ch-i/5*ch;s.appendChild(E("line",{x1:m.l,y1:y,x2:W-m.r,y2:y,stroke:"#e8dfd2"}));s.appendChild(E("text",{x:m.l-8,y:y+4,"text-anchor":"end",fill:"#6c7480","font-size":12},Math.round(i/5*max)))}
+ let pts=data.map((d,i)=>({x:m.l+i/(data.length-1)*cw,y:m.t+ch-d.value/max*ch,d}));
+ let area=`M ${pts[0].x} ${m.t+ch} `+pts.map(p=>`L ${p.x} ${p.y}`).join(" ")+` L ${pts.at(-1).x} ${m.t+ch} Z`;
+ s.appendChild(E("path",{d:area,fill:"rgba(211,157,63,.2)"}));s.appendChild(E("path",{d:pts.map((p,i)=>`${i?"L":"M"} ${p.x} ${p.y}`).join(" "),fill:"none",stroke:"#7a1f2b","stroke-width":4,"stroke-linecap":"round"}));
+ pts.forEach(p=>{s.appendChild(E("circle",{cx:p.x,cy:p.y,r:5,fill:"#d39d3f",stroke:"#7a1f2b","stroke-width":2}));s.appendChild(E("text",{x:p.x,y:H-25,"text-anchor":"middle",fill:"#4b5563","font-size":12},p.d[xkey]));s.appendChild(E("text",{x:p.x,y:p.y-10,"text-anchor":"middle",fill:"#7a1f2b","font-size":11,"font-weight":800},p.d.value))})
+}
+function barChart(id,data){const c=document.getElementById(id),s=svg(c),W=800,H=420,m={t:18,r:60,b:18,l:300},max=Math.max(...data.map(d=>d.value)),rh=(H-m.t-m.b)/data.length,bw=W-m.l-m.r;data.forEach((d,i)=>{let y=m.t+i*rh,bh=rh*.58,w=d.value/max*bw;s.appendChild(E("text",{x:m.l-10,y:y+bh/2+4,"text-anchor":"end",fill:"#374151","font-size":11},d.label.length>42?d.label.slice(0,41)+"…":d.label));s.appendChild(E("rect",{x:m.l,y,width:bw,height:bh,rx:5,fill:"#f1eadf"}));s.appendChild(E("rect",{x:m.l,y,width:w,height:bh,rx:5,fill:"#315d8a"}));s.appendChild(E("text",{x:m.l+w+7,y:y+bh/2+4,fill:"#5d6676","font-size":11,"font-weight":700},d.value))})}
+function donutChart(id,data){const c=document.getElementById(id),s=svg(c),cx=250,cy=210,R=135,r=72,total=data.reduce((a,b)=>a+b.value,0),colors=["#7a1f2b","#d39d3f","#315d8a","#166847","#786ca8","#a13b3b"];let a=-Math.PI/2;data.forEach((d,i)=>{let da=d.value/total*Math.PI*2,b=a+da,large=da>Math.PI?1:0,os=[cx+R*Math.cos(a),cy+R*Math.sin(a)],oe=[cx+R*Math.cos(b),cy+R*Math.sin(b)],ie=[cx+r*Math.cos(b),cy+r*Math.sin(b)],is=[cx+r*Math.cos(a),cy+r*Math.sin(a)],path=`M ${os[0]} ${os[1]} A ${R} ${R} 0 ${large} 1 ${oe[0]} ${oe[1]} L ${ie[0]} ${ie[1]} A ${r} ${r} 0 ${large} 0 ${is[0]} ${is[1]} Z`;s.appendChild(E("path",{d:path,fill:colors[i%colors.length],stroke:"#fff","stroke-width":2}));a=b});s.appendChild(E("text",{x:cx,y:cy-2,"text-anchor":"middle",fill:"#182235","font-size":28,"font-weight":900},total));s.appendChild(E("text",{x:cx,y:cy+22,"text-anchor":"middle",fill:"#5d6676","font-size":13},"records"));data.forEach((d,i)=>{let y=75+i*48;s.appendChild(E("rect",{x:450,y:y-12,width:18,height:18,rx:4,fill:colors[i%colors.length]}));s.appendChild(E("text",{x:480,y,fill:"#374151","font-size":13,"font-weight":700},d.label));s.appendChild(E("text",{x:750,y,"text-anchor":"end",fill:"#5d6676","font-size":13},`${d.value} (${(d.value/total*100).toFixed(1)}%)`))})}
+</script>
+</body>
+</html>
